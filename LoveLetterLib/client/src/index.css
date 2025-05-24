@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 276 67% 95%; /* More lavender background */
+  --foreground: 0 0% 20%; /* text color */
+  
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 20%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 20%;
+  
+  --primary: 276 67% 88%; /* Purple tint */
+  --primary-foreground: 0 0% 20%;
+  
+  --secondary: 336 100% 90%; /* Soft pink */
+  --secondary-foreground: 0 0% 20%;
+  
+  --muted: 276 67% 96%;
+  --muted-foreground: 0 0% 50%;
+  
+  --accent: 276 67% 88%;
+  --accent-foreground: 0 0% 20%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 276 67% 90%;
+  --input: 276 67% 90%;
+  --ring: 276 67% 80%;
+  
+  --radius: 1.25rem;
+}
+
+body {
+  background-color: hsl(var(--background));
+  /* Purple hearts pattern - optimized SVG size */
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 33.3c-.9 0-1.8-.3-2.5-.9L7 23.4c-2.3-2-3-4.2-3-6.1 0-4.8 4-8 8-8 1.7 0 3.3.5 4.9 1.7L20 13.3l3.1-2.4c1.6-1.2 3.2-1.7 4.9-1.7 4 0 8 3.2 8 8 0 1.9-.7 4.1-3 6.1l-10.5 9c-.7.6-1.6.9-2.5.9z' fill='%23e7d3f7' fill-opacity='0.35'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  /* Reduce memory usage */
+  will-change: auto;
+  text-rendering: optimizeLegibility;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-quicksand antialiased text-foreground;
+  }
+  
+  .font-handwriting {
+    @apply font-['Dancing_Script'];
+  }
+  
+  .font-poppins {
+    @apply font-['Poppins'];
+  }
+  
+  .font-quicksand {
+    @apply font-['Quicksand'];
+  }
+  
+  .paper-texture {
+    @apply bg-white;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffd6e8' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 3s ease-in-out 1.5s infinite;
+  }
+}

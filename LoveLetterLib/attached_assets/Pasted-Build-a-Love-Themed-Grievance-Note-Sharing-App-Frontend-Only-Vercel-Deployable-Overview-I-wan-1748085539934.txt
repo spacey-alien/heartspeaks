@@ -1,0 +1,109 @@
+Build a Love-Themed Grievance Note-Sharing App (Frontend-Only, Vercel Deployable)”
+📌 Overview
+I want to build a frontend-only grievance note app hosted on Vercel, designed with feminine/love psychology colors (soft pink, rose, lavender, blush). The app lets my girlfriend submit a grievance (title, problem, mood, and suggested solution). On submission, a unique shareable link is generated (with the data encoded into the URL or stored in localStorage/query string). When I open that link, I can view her message in a sweetly designed note-style page. No backend, no database — fully serverless.
+
+✅ Pages
+1. index.html – Submit Complaint Page
+Form fields:
+
+Title of the grievance
+
+What’s bothering you?
+
+Current mood (emoji dropdown or colored buttons)
+
+Suggested fix
+
+A cute “Send with Love 💌” button
+
+After submission:
+
+Encode all fields into URL (e.g., /note.html?title=...&mood=...&problem=...)
+
+Show a link she can copy/share (auto copy to clipboard with "Link copied 💗" toast)
+
+Pastel UI:
+
+Rounded inputs, soft shadows
+
+Colors: soft pinks, peach, baby purple
+
+Cute heart icon header, warm fonts like Quicksand, Poppins
+
+2. note.html – Read-Only Note View
+Parse query parameters from the link (e.g., note.html?title=...)
+
+Display the grievance in note/paper/card layout:
+
+Use handwriting-style font for content (like Dancing Script)
+
+Display:
+
+Title 💌
+
+Mood emoji
+
+Problem (styled like a journal entry)
+
+Suggested solution (optional section)
+
+Date generated (use new Date() to append timestamp)
+
+Decorative hearts or flower patterns in the background
+
+Button: “Send her a hug 💞” (can be fake or animated)
+
+✨ Styling Details
+Use TailwindCSS or plain CSS with:
+
+#ffd6e8 (blush pink), #ffe5f0 (light rose), #e7d3f7 (lavender) for backgrounds
+
+Rounded corners (border-radius: 20px)
+
+Drop shadows, soft animations
+
+Heart emoji headers and animations (e.g., floating hearts)
+
+🧠 Logic / Functionality
+All data is encoded via URL query parameters (safe for frontend only)
+
+Example generated URL:
+
+arduino
+Copy
+Edit
+/note.html?title=Feeling+Ignored&mood=😔&problem=You+didn't+text+me+back...&solution=Just+a+call+would+make+me+smile.
+📁 Folder Structure (for Vercel)
+swift
+Copy
+Edit
+heartspeak-frontend/
+├── index.html         // submission form
+├── note.html          // view note via shared link
+├── style.css          // all love-theme styles
+├── script.js          // encode/decode URL + handle logic
+├── /assets             // optional: emojis, hearts
+🚀 Hosting on Vercel
+Just connect the GitHub repo to Vercel
+
+No backend, no build step — static deployment
+
+🧾 Expected User Flow
+She visits index.html and fills in her complaint
+
+Clicks “Send with Love 💌”
+
+Gets a shareable link like:
+
+arduino
+Copy
+Edit
+https://heartspeak.vercel.app/note.html?title=Silent+Treatment&mood=😔&problem=Felt+lonely...
+You open the link — you see a beautiful love-themed note with her full complaint and mood
+
+💡 Bonus Ideas (optional):
+Add “🌈 Mood Bubble” background that changes based on selected mood
+
+Allow her to upload a selfie or choose a love-themed sticker to attach
+
+Show “💗 Heart Count” — number of complaints submitted this month (via localStorage)
